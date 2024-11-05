@@ -89,8 +89,7 @@ class _WebView extends State<WebView> {
           const SizedBox(
             width: 1000,
             child: Column(
-              mainAxisAlignment:
-                  MainAxisAlignment.center, // Center the text vertically
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 AutoSizeInterText(
@@ -122,6 +121,139 @@ class _WebView extends State<WebView> {
             height: 300,
             width: 700,
             child: Image.asset('assets/global_partner.png'),
+          ),
+          const Gap(50),
+          const AutoSizeInterText(
+            text: 'Became a seller',
+            fontSize: 50,
+            color: Color(0xFFED2080), // Changed to white for visibility
+            fw: FontWeight.bold,
+            fontFamily: "Poppinsbold",
+            maxLines: 2,
+          ),
+          const Gap(50),
+          const SizedBox(
+            child: AutoSizeInterText(
+              text:
+                  "Fill out the FORM to REGISTER as PAMILYA SELLER and PAMILYA TEAM will reach out to you for review and approval.",
+              fontSize: 18,
+              color: Colors.black,
+              fw: FontWeight.bold,
+              fontFamily: "Poppinslight",
+              maxLines: 20,
+              align: TextAlign.center,
+            ),
+          ),
+          const Gap(50),
+          const SizedBox(
+            child: AutoSizeInterText(
+              text: "How it works",
+              fontSize: 15,
+              color: Color.fromARGB(
+                  255, 0, 0, 0), // Changed to white for visibility
+              fw: FontWeight.bold,
+              fontFamily: "Poppinsbold",
+              maxLines: 2,
+              align: TextAlign.center,
+            ),
+          ),
+          const Gap(50),
+          SizedBox(
+            child: Wrap(
+              spacing: 50,
+              children: [
+                SizedBox(
+                  width: 400,
+                  child: Stack(children: [
+                    Image.asset('assets/bgframe.png'),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 60, top: 65),
+                      child: AutoSizeInterText(
+                        text:
+                            'Add your name and phone number to get started selling on Pamilya.',
+                        fontSize: 8,
+                        color: Colors.black, // Changed to white for visibility
+                        fw: FontWeight.bold,
+                        fontFamily: "Poppinsbold",
+                        maxLines: 10,
+                      ),
+                    )
+                  ]),
+                ),
+                SizedBox(
+                  width: 400,
+                  child: Stack(children: [
+                    Image.asset('assets/bgframe.png'),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 60, top: 27),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AutoSizeInterText(
+                            text: 'Add Business',
+                            fontSize: 8,
+                            color:
+                                Colors.black, // Changed to white for visibility
+                            fw: FontWeight.bold,
+                            fontFamily: "Poppinsbold",
+                            maxLines: 10,
+                            align: TextAlign.start,
+                          ),
+                          Gap(20),
+                          AutoSizeInterText(
+                            text:
+                                'Add your name and phone number to get started selling on Pamilya.',
+                            fontSize: 8,
+                            color:
+                                Colors.black, // Changed to white for visibility
+                            fw: FontWeight.bold,
+                            fontFamily: "Poppinsbold",
+                            maxLines: 10,
+                          ),
+                        ],
+                      ),
+                    )
+                  ]),
+                ),
+                SizedBox(
+                  width: 400,
+                  child: Stack(children: [
+                    Image.asset('assets/bgframe.png'),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 60, top: 27, right: 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AutoSizeInterText(
+                            text: 'Add Products/ Services',
+                            fontSize: 8,
+                            color:
+                                Colors.black, // Changed to white for visibility
+                            fw: FontWeight.bold,
+                            fontFamily: "Poppinsbold",
+                            maxLines: 10,
+                            align: TextAlign.start,
+                          ),
+                          Gap(20),
+                          AutoSizeInterText(
+                            text:
+                                'Minimum 3 products/ services needed for your free listing page.',
+                            fontSize: 8,
+                            color:
+                                Colors.black, // Changed to white for visibility
+                            fw: FontWeight.bold,
+                            fontFamily: "Poppinsbold",
+                            maxLines: 10,
+                          ),
+                        ],
+                      ),
+                    )
+                  ]),
+                ),
+              ],
+            ),
           )
         ]));
   }
