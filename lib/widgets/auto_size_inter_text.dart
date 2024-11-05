@@ -28,14 +28,14 @@ class AutoSizeInterText extends StatelessWidget {
     return AutoSizeText(
       text,
       maxLines: maxLines ?? 1,
-      textAlign: align ?? TextAlign.justify,
+      textAlign: align ?? TextAlign.left,
       style: TextStyle(
-          fontSize: fontSize ?? 70,
-          color: color,
-          fontWeight: fw ?? FontWeight.bold,
-          fontStyle: fontStyle,
-          fontFamily: fontFamily,
-          ),
+        fontSize: fontSize ?? 70,
+        color: color,
+        fontWeight: fw ?? FontWeight.bold,
+        fontStyle: fontStyle,
+        fontFamily: fontFamily,
+      ),
     );
   }
 }

@@ -110,13 +110,13 @@ class AppBarMenus extends StatelessWidget {
   final Color color; // Define color properly
 
   const AppBarMenus({
-    Key? key,
+    super.key,
     required this.title,
     required this.action,
     this.isActive = false,
     this.fontWeight = FontWeight.normal, // Default to normal
     this.color = Colors.black, // Default color set to black
-  }) : super(key: key); // Correct super constructor
+  }); // Correct super constructor
 
   @override
   Widget build(BuildContext context) {

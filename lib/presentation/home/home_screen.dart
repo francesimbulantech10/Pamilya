@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:gap/gap.dart';
-import 'package:pamilya_project1/presentation/home/home_section.dart';
+import 'package:pamilya_project1/presentation/about_us/about_us_section.dart';
+
 import 'package:pamilya_project1/widgets/footer.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/drawer.dart';
@@ -9,10 +10,10 @@ import '../../widgets/drawer.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreen();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreen extends State<HomeScreen> {
   late final ScrollController scrollController;
 
   @override
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
       endDrawer: const AppBarDrawer(),
       body: Stack(
         children: [
+          Image.asset('assets'),
           SingleChildScrollView(
             controller: scrollController,
             child: Column(
@@ -53,8 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       //Purpose of this is still display the class in home section
-                      Gap(150),
-                      HomeSection(),
+
+                      AboutUssection(),
                       Gap(150),
                       FooterSection(),
                     ],
