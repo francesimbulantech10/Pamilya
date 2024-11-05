@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -85,8 +85,7 @@ class _AppBarState extends State<AppBar> {
       elevation: 0,
       child: SizedBox(
         height: 100, // Adjusted height to add blue color at the bottom
-        child: Stack(
-          children: [
+        child: Stack(children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
             child: Row(
@@ -118,7 +117,7 @@ class _AppBarState extends State<AppBar> {
                     AppBarMenu(
                       title: 'Be our partner',
                       action: () {
-                        context.go('/our-blog');
+                        context.go('/be-our-partner');
                       },
                       textStyle: TextStyle(
                         fontSize: 16,
@@ -127,9 +126,9 @@ class _AppBarState extends State<AppBar> {
                       ),
                     ),
                     AppBarMenu(
-                      title: 'Advantages',
+                      title: 'Why Go With Us',
                       action: () {
-                        context.go('/our-blog');
+                        context.go('/whygous');
                       },
                       textStyle: TextStyle(
                         fontSize: 16,
@@ -140,7 +139,7 @@ class _AppBarState extends State<AppBar> {
                     AppBarMenu(
                       title: 'FAQ',
                       action: () {
-                        context.go('/our-blog');
+                        context.go('/faq');
                       },
                       textStyle: TextStyle(
                         fontSize: 16,
