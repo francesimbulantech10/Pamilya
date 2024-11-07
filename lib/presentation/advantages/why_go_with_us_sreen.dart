@@ -55,8 +55,8 @@ class _WhyGoWithUsSreen extends State<WhyGoWithUsSreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       //Purpose of this is still display the class in home section
-                      Gap(150),
-                      Advantagesection(),
+
+                      WhyGoWithUsSection(),
                       Gap(150),
                       FooterSection(),
                     ],

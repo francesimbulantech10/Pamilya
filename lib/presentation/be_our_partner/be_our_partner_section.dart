@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:pamilya_project1/widgets/auto_size_inter_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BeOurPartnerSection extends StatefulWidget {
   const BeOurPartnerSection({super.key});
@@ -254,7 +255,248 @@ class _WebView extends State<WebView> {
                 ),
               ],
             ),
-          )
+          ),
+          const Gap(50),
+          SizedBox(
+            width: size.width,
+            child: Stack(children: [
+              Image.asset('assets/connect_withus1.png', width: size.width),
+              const Padding(
+                padding: EdgeInsets.only(left: 450, top: 150, right: 100),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    AutoSizeInterText(
+                      text:
+                          'Connect with thousands of buyers across the country.',
+                      fontSize: 18,
+                      color: Colors.black, // Changed to white for visibility
+                      fw: FontWeight.bold,
+                      fontFamily: "Poppinsbold",
+                      maxLines: 10,
+                      align: TextAlign.center,
+                    ),
+                    Gap(27),
+                    Wrap(spacing: 50, children: [
+                      SizedBox(
+                        width: 300,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            AutoSizeInterText(
+                              text: 'Grow your business',
+                              fontSize: 18,
+
+                              color: Colors
+                                  .black, // Changed to white for visibility
+                              fw: FontWeight.bold,
+                              fontFamily: "Poppinsbold",
+                              maxLines: 10,
+                            ),
+                            Gap(10),
+                            SizedBox(
+                              width: 150,
+                              child: AutoSizeInterText(
+                                text: 'Sell to buyers anytime anywhere',
+                                fontSize: 14,
+                                color: Colors
+                                    .black, // Changed to white for visibility
+                                fw: FontWeight.normal,
+                                fontFamily: "Poppinsbold",
+                                align: TextAlign.center,
+                                maxLines: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 300,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            AutoSizeInterText(
+                              text: 'Low Commissions',
+                              fontSize: 18,
+                              color: Colors
+                                  .black, // Changed to white for visibility
+                              fw: FontWeight.bold,
+                              fontFamily: "Poppinsbold",
+                              maxLines: 10,
+                            ),
+                            Gap(10),
+                            SizedBox(
+                              width: 150,
+                              child: AutoSizeInterText(
+                                text: 'Low commission or transaction fee',
+                                fontSize: 14,
+                                color: Colors
+                                    .black, // Changed to white for visibility
+                                fw: FontWeight.normal,
+                                fontFamily: "Poppinsbold",
+                                maxLines: 10,
+                                align: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 300,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            AutoSizeInterText(
+                              text: 'Manage your business better',
+                              fontSize: 18,
+                              color: Colors
+                                  .black, // Changed to white for visibility
+                              fw: FontWeight.bold,
+                              fontFamily: "Poppinsbold",
+                              maxLines: 10,
+                            ),
+                            Gap(10),
+                            SizedBox(
+                              width: 150,
+                              child: AutoSizeInterText(
+                                text: 'Lead management system & other features',
+                                fontSize: 14,
+                                color: Colors
+                                    .black, // Changed to white for visibility
+                                fw: FontWeight.normal,
+                                fontFamily: "Poppinsbold",
+                                align: TextAlign.center,
+                                maxLines: 10,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ])
+                  ],
+                ),
+              )
+            ]),
+          ),
+          const Gap(50),
+          SizedBox(
+            width: 1000,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const AutoSizeInterText(
+                  text: 'Became a buyer',
+                  fontSize: 50,
+                  color: Color(0xFFED2080), // Changed to white for visibility
+                  fw: FontWeight.bold,
+                  fontFamily: "Poppinsbold",
+                  maxLines: 2,
+                ),
+                const Gap(20),
+                const SizedBox(
+                  child: AutoSizeInterText(
+                    text:
+                        'just simply create an account at pamilya.com.ph and start placing an order once your account is APPROVED.',
+                    fontSize: 14,
+                    color: Colors.black, // Changed to white for visibility
+                    fw: FontWeight.normal,
+                    fontFamily: "Poppinsbold",
+                    align: TextAlign.center,
+                    maxLines: 10,
+                  ),
+                ),
+                const Gap(20),
+                SizedBox(
+                  child: TextButton(
+                    onPressed: () async {
+                      const url =
+                          'https://pamilya.com.ph/guest-user/login-form/1';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(
+                          0xFF404FA1), // Set background color to #404FA1
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                    ),
+                    child: const Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: Colors.white, // Set text color for visibility
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(50),
+          SizedBox(
+            width: 1000,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const AutoSizeInterText(
+                  text: 'Became A Affiliate',
+                  fontSize: 50,
+                  color: Color(0xFFED2080), // Changed to white for visibility
+                  fw: FontWeight.bold,
+                  fontFamily: "Poppinsbold",
+                  maxLines: 2,
+                ),
+                const Gap(20),
+                const SizedBox(
+                  child: AutoSizeInterText(
+                    text:
+                        'just simply create an account at pamilya.com.ph  and waityour account is APPROVED.',
+                    fontSize: 14,
+                    color: Colors.black, // Changed to white for visibility
+                    fw: FontWeight.normal,
+                    fontFamily: "Poppinsbold",
+                    align: TextAlign.center,
+                    maxLines: 10,
+                  ),
+                ),
+                const Gap(20),
+                SizedBox(
+                  child: TextButton(
+                    onPressed: () async {
+                      const url = 'https://pamilya.com.ph/guest-affiliate';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(
+                          0xFF404FA1), // Set background color to #404FA1
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                    ),
+                    child: const Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: Colors.white, // Set text color for visibility
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ]));
   }
 }
