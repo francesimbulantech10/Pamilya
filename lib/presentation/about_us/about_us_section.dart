@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:pamilya_project1/widgets/auto_size_inter_text.dart';
-import 'package:pamilya_project1/widgets/btn_widget.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutUssection extends StatefulWidget {

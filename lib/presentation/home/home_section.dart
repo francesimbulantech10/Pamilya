@@ -1,7 +1,7 @@
-import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:pamilya_project1/widgets/fadeintextwidget.dart';
+
 import '../../widgets/auto_size_inter_text.dart';
 
 class HomeSection extends StatefulWidget {
@@ -43,58 +43,7 @@ class _WebViewState extends State<WebView> with TickerProviderStateMixin {
       width: size.width,
       child: Column(
         children: [
-          // Stack(
-          //   children: [
-          //     SizedBox(
-          //       width: size.width,
-          //       child: Image.asset(
-          //         'assets/asians-market-bambo.png',
-          //         width: size.width,
-          //       ),
-          //     ),
-          //     Positioned.fill(
-          //       child: Container(
-          //         alignment: Alignment.centerLeft, // Keep this as is
-          //         // ignore: deprecated_member_use
-
-          //         child: const Padding(
-          //           padding: EdgeInsets.only(
-          //               left: 100.0), // Adjust the left padding as needed
-          //           child: SizedBox(
-          //             width: 600,
-          //             child: Column(
-          //               mainAxisAlignment: MainAxisAlignment
-          //                   .center, // Center the text vertically
-          //               children: [
-          //                 AutoSizeInterText(
-          //                   text:
-          //                       'Discover Local Treasures, Delivered to Your Doorstep.',
-          //                   fontSize: 50,
-          //                   color:
-          //                       Colors.white, // Changed to white for visibility
-          //                   fw: FontWeight.bold,
-          //                   fontFamily: "Poppinsbold",
-          //                   maxLines: 2,
-          //                 ),
-
-          //                 SizedBox(height: 50), // Add space between the texts
-          //                 AutoSizeInterText(
-          //                   text:
-          //                       'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
-          //                   fontSize: 18,
-          //                   color: Colors.white,
-          //                   fw: FontWeight.normal,
-          //                   fontFamily: "Poppinslight",
-          //                   maxLines: 5,
-          //                 ),
-          //               ],
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+     
         ],
       ),
     );
