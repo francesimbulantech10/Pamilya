@@ -55,9 +55,9 @@ class _AboutUsScreen extends State<AboutUsScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       //Purpose of this is still display the class in home section
-
+                        
                       AboutUssection(),
-                      Gap(150),
+                      Gap(10),
                       FooterSection(),
                     ],
                   ),
