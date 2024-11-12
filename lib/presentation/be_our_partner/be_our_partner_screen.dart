@@ -56,9 +56,9 @@ class _BeOurPartnerScreen extends State<BeOurPartnerScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       //Purpose of this is still display the class in home section
-
+                      Gap(60),
                       BeOurPartnerSection(),
-                      Gap(150),
+                      Gap(50),
                       FooterSection(),
                     ],
                   ),
