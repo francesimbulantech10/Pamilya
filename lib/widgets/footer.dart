@@ -494,7 +494,9 @@ class _MobileViewState extends State<MobileView> {
                   maxLines: 5,
                 ),
                 const Gap(20),
-                Column(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Material(
                       color: Colors.transparent,
@@ -502,21 +504,21 @@ class _MobileViewState extends State<MobileView> {
                         onTap: () => _launchURL(
                             "https://www.facebook.com/pamilya.com.ph"),
                         child: SizedBox(
-                          width: 40,
-                          height: 20,
+                          width: 60,
+                          height: 30,
                           child: Image.asset("assets/Facebook.png"),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10), // Space between the images
+                    const SizedBox(width: 5), // Space between the images
                     Material(
                       color: Colors.transparent,
                       child: InkWell(
                         onTap: () => _launchURL(
                             "https://instagram.com/pamilya_ph/?fbclid=IwY2xjawGOiI9leHRuA2FlbQIxMAABHSugpfXhNASzSfOwQE3vVkTU85JTpwkhKF8fL1RvReQf3lF1qTBa5ol5VA_aem_l9AxhoNJtOX3M2Pa654I2A"),
                         child: SizedBox(
-                          width: 40,
-                          height: 20,
+                          width: 60,
+                          height: 30,
                           child: Image.asset("assets/Instagram.png"),
                         ),
                       ),
@@ -526,6 +528,7 @@ class _MobileViewState extends State<MobileView> {
               ],
             ),
           ),
+          const Gap(20),
           const SizedBox(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -579,6 +582,7 @@ class _MobileViewState extends State<MobileView> {
               ],
             ),
           ),
+          const Gap(20),
           const AutoSizeInterText(
             text: 'Contact',
             fontSize: 18,
