@@ -144,6 +144,8 @@ class _TabletView extends State<TabletView> {
     return SizedBox(
         width: size.width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
                 width: size.width,
@@ -154,7 +156,7 @@ class _TabletView extends State<TabletView> {
             const Gap(50),
             const AutoSizeInterText(
               text: 'How Can Pamilya Help You?',
-              fontSize: 32,
+              fontSize: 25,
               color: Color(0xFFED2080),
               fw: FontWeight.bold,
               fontFamily: "Poppinsbold",
@@ -248,21 +250,31 @@ class _MobileViewState extends State<MobileView> {
     return SizedBox(
         width: size.width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Gap(20),
             SizedBox(
                 width: size.width,
+                height: 400,
                 child: Image.asset(
                   'assets/whygowithusbg.png',
                   width: size.width,
+                  height: 400,
+                  fit: BoxFit.cover,
                 )),
             const Gap(50),
-            const AutoSizeInterText(
-              text: 'How Can Pamilya Help You?',
-              fontSize: 32,
-              color: Color(0xFFED2080),
-              fw: FontWeight.bold,
-              fontFamily: "Poppinsbold",
-              maxLines: 20,
+            const SizedBox(
+              width: 400,
+              child: AutoSizeInterText(
+                text: 'How Can Pamilya Help You?',
+                fontSize: 32,
+                color: Color(0xFFED2080),
+                fw: FontWeight.bold,
+                fontFamily: "Poppinsbold",
+                maxLines: 20,
+                align: TextAlign.center,
+              ),
             ),
             const Gap(100),
             Wrap(
@@ -319,16 +331,19 @@ class _MobileViewState extends State<MobileView> {
                     )),
                 const Gap(20),
                 const SizedBox(
-                  width: 800,
-                  child: AutoSizeInterText(
-                    text:
-                        'Join us as a valued partner in promoting native Philippine products. Together, we can empower local artisans, celebrate our culture, and enhance brand awareness while supporting sustainable local industries. Let’s create a platform that connects consumers with authentic, high-quality products that tell the Philippines\' story!',
-                    fontSize: 18,
-                    color: Colors.black,
-                    fw: FontWeight.normal,
-                    fontFamily: "Poppinslight",
-                    align: TextAlign.center,
-                    maxLines: 30,
+                  width: 400,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: AutoSizeInterText(
+                      text:
+                          'Join us as a valued partner in promoting native Philippine products. Together, we can empower local artisans, celebrate our culture, and enhance brand awareness while supporting sustainable local industries. Let’s create a platform that connects consumers with authentic, high-quality products that tell the Philippines\' story!',
+                      fontSize: 18,
+                      color: Colors.black,
+                      fw: FontWeight.normal,
+                      fontFamily: "Poppinslight",
+                      align: TextAlign.justify,
+                      maxLines: 30,
+                    ),
                   ),
                 )
               ],

@@ -52,7 +52,7 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                   AppBarMenus(
                     title: "About-us",
                     action: () {
-                      context.go('/');
+                      context.go('/');         
                     },
                     isActive: activePage == "Home",
                     fontWeight: FontWeight.bold, // Make Home bold
@@ -61,15 +61,15 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                   AppBarMenus(
                     title: "Be our Partner",
                     action: () {
-                      context.go('/our-blog');
+                      context.go('/whygous');
                     },
-                    isActive: activePage == "Our Blog",
+                    isActive: activePage == "Be our Partner",
                     fontWeight: FontWeight.bold, // Make Our Blog normal
                   ),
                   AppBarMenus(
                     title: "Advantages",
                     action: () {
-                      context.go('/about-us');
+                      context.go('/be-our-partner');
                     },
                     isActive: activePage == "About us",
                     fontWeight: FontWeight.bold, // Make About Us normal
@@ -77,9 +77,9 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                   AppBarMenus(
                     title: "FAQ",
                     action: () {
-                      context.go('/about-us');
+                      context.go('/faq');
                     },
-                    isActive: activePage == "About us",
+                    isActive: activePage == "FAQ",
                     fontWeight: FontWeight.bold, // Make About Us normal
                   ),
                 ],
