@@ -41,7 +41,7 @@ class _WebViewState extends State<WebView> with TickerProviderStateMixin {
     var size = MediaQuery.sizeOf(context);
     return SizedBox(
       width: size.width,
-      child: Column(
+      child: const Column(
         children: [
      
         ],
@@ -63,7 +63,7 @@ class _TabletView extends State<TabletView> {
     var size = MediaQuery.sizeOf(context);
     return SizedBox(
       width: size.width,
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [],

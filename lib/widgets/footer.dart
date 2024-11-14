@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pamilya_project1/widgets/auto_size_inter_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:gap/gap.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class FooterSection extends StatefulWidget {
   const FooterSection({super.key});
@@ -29,7 +28,9 @@ class _FooterSectionState extends State<FooterSection> {
 }
 
 void _launchURL(String url) async {
+  // ignore: deprecated_member_use
   if (await canLaunch(url)) {
+    // ignore: deprecated_member_use
     await launch(url);
   } else {
     throw 'Could not launch $url';

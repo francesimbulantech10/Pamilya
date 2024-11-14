@@ -438,7 +438,9 @@ class _WebView extends State<WebView> {
                         onPressed: () async {
                           const url =
                               'https://pamilya.com.ph/guest-user/login-form/1';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
@@ -497,7 +499,9 @@ class _WebView extends State<WebView> {
                       child: TextButton(
                         onPressed: () async {
                           const url = 'https://pamilya.com.ph/guest-affiliate';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
@@ -948,7 +952,9 @@ class _TabletView extends State<TabletView> {
                         onPressed: () async {
                           const url =
                               'https://pamilya.com.ph/guest-user/login-form/1';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
@@ -1007,7 +1013,9 @@ class _TabletView extends State<TabletView> {
                       child: TextButton(
                         onPressed: () async {
                           const url = 'https://pamilya.com.ph/guest-affiliate';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
@@ -1462,7 +1470,9 @@ class _MobileViewState extends State<MobileView> {
                         onPressed: () async {
                           const url =
                               'https://pamilya.com.ph/guest-user/login-form/1';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
@@ -1522,7 +1532,9 @@ class _MobileViewState extends State<MobileView> {
                       child: TextButton(
                         onPressed: () async {
                           const url = 'https://pamilya.com.ph/guest-affiliate';
+                          // ignore: deprecated_member_use
                           if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';

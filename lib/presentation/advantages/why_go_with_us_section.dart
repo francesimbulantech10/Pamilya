@@ -253,7 +253,7 @@ class _MobileViewState extends State<MobileView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Gap(20),
+            const Gap(20),
             SizedBox(
                 width: size.width,
                 height: 400,

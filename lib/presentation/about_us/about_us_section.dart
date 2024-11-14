@@ -104,7 +104,9 @@ class _WebView extends State<WebView> {
                                 child: TextButton(
                                   onPressed: () async {
                                     const url = 'https://pamilya.com.ph';
+                                    // ignore: deprecated_member_use
                                     if (await canLaunch(url)) {
+                                      // ignore: deprecated_member_use
                                       await launch(url);
                                     } else {
                                       throw 'Could not launch $url';
@@ -146,10 +148,11 @@ class _WebView extends State<WebView> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black
+                              // ignore: deprecated_member_use
                               .withOpacity(0.3), // Shadow color with opacity
                           spreadRadius: 5, // How wide the shadow spreads
                           blurRadius: 10, // How soft the shadow looks
-                          offset: Offset(0, 5), // Position of the shadow (x, y)
+                          offset: const Offset(0, 5), // Position of the shadow (x, y)
                         ),
                       ],
                     ),
@@ -351,7 +354,7 @@ class _TabletView extends State<TabletView> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Gap(70),
+              const Gap(70),
               Stack(
                 children: [
                   SizedBox(
@@ -378,7 +381,7 @@ class _TabletView extends State<TabletView> {
                             children: [
                               SizedBox(
                                 width: size.width * .4,
-                                child: AutoSizeInterText(
+                                child: const AutoSizeInterText(
                                   text:
                                       'Discover Local Treasures, Delivered to Your Doorstep.',
                                   fontSize: 50,
@@ -394,7 +397,7 @@ class _TabletView extends State<TabletView> {
                                   height: 50), // Add space between the texts
                               SizedBox(
                                 width: size.width * .4,
-                                child: AutoSizeInterText(
+                                child: const AutoSizeInterText(
                                   text:
                                       'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
                                   fontSize: 18,
@@ -409,7 +412,9 @@ class _TabletView extends State<TabletView> {
                                 child: TextButton(
                                   onPressed: () async {
                                     const url = 'https://pamilya.com.ph';
+                                    // ignore: deprecated_member_use
                                     if (await canLaunch(url)) {
+                                      // ignore: deprecated_member_use
                                       await launch(url);
                                     } else {
                                       throw 'Could not launch $url';
@@ -447,10 +452,11 @@ class _TabletView extends State<TabletView> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black
+                              // ignore: deprecated_member_use
                               .withOpacity(0.3), // Shadow color with opacity
                           spreadRadius: 5, // How wide the shadow spreads
                           blurRadius: 10, // How soft the shadow looks
-                          offset: Offset(0, 5), // Position of the shadow (x, y)
+                          offset: const Offset(0, 5), // Position of the shadow (x, y)
                         ),
                       ],
                     ),
@@ -676,7 +682,7 @@ class _MobileViewState extends State<MobileView> {
                               .center, // Center the text vertically
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               child: AutoSizeInterText(
                                 text:
                                     'Discover Local Treasures, Delivered to Your Doorstep.',
@@ -691,7 +697,7 @@ class _MobileViewState extends State<MobileView> {
 
                             const SizedBox(
                                 height: 50), // Add space between the texts
-                            SizedBox(
+                            const SizedBox(
                               child: AutoSizeInterText(
                                 text:
                                     'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
@@ -707,7 +713,9 @@ class _MobileViewState extends State<MobileView> {
                               child: TextButton(
                                 onPressed: () async {
                                   const url = 'https://pamilya.com.ph';
+                                  // ignore: deprecated_member_use
                                   if (await canLaunch(url)) {
+                                    // ignore: deprecated_member_use
                                     await launch(url);
                                   } else {
                                     throw 'Could not launch $url';
@@ -746,10 +754,11 @@ class _MobileViewState extends State<MobileView> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black
+                          // ignore: deprecated_member_use
                           .withOpacity(0.3), // Shadow color with opacity
                       spreadRadius: 5, // How wide the shadow spreads
                       blurRadius: 10, // How soft the shadow looks
-                      offset: Offset(0, 5), // Position of the shadow (x, y)
+                      offset: const Offset(0, 5), // Position of the shadow (x, y)
                     ),
                   ],
                 ),

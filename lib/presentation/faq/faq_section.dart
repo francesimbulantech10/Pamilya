@@ -34,397 +34,169 @@ class WebView extends StatefulWidget {
 }
 
 class _WebView extends State<WebView> {
+  final List<FAQModel> faqList = [
+    FAQModel(
+      title: "Who can sell on Pamilya.com.ph?",
+      content: "• Pamilya.com.ph welcomes both individuals and businesses "
+          "(Christian or non-Christian) who offer products or services "
+          "that align with the platform's mission and guidelines.",
+    ),
+    FAQModel(
+      title: "Pre-register as a SELLER on PAMILYA Store",
+      content:
+          "Please fill out the Google Form that will be sent to you. We still need to gather your basic details and product information.",
+    ),
+    FAQModel(
+      title: "Marketing",
+      content:
+          "Pamilya will handle the marketing ensuring they reach a wider audience. You just need to send us your business logo, product photos, and price lists as basis.",
+    ),
+    FAQModel(
+      title: "Shipping",
+      content:
+          "Sellers will be subject to fees, such as a service fee from the platform, which is 7%. This will be used to maintain our website and to help you with online marketing your products. For example, if the total sale (including shipping fee) is Php 200, Php 14.00 will be our service fee.",
+    ),
+    FAQModel(
+      title: "Payment",
+      content:
+          "Once the product is successfully delivered, we will process the payment and it will be credited to your bank account / GCASH number provided during the REGISTRATION. Kindly wait for 5-7 banking days.",
+    ),
+    FAQModel(
+      title: "Are there any fees for selling on pamilya.com.ph?",
+      content:
+          "Yes, there is a 7% service fee which will be used for maintaining our platform and for marketing your products.",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
+
     return SizedBox(
-        width: size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              child: Stack(
-                children: [
-                  SizedBox(
-                    width: 1500,
-                    child: Image.asset(
-                      'assets/Faqbg.png',
-                      width: size.width,
-                    ),
+      width: size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // Header with background image and description
+          SizedBox(
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: 1500,
+                  child: Image.asset(
+                    'assets/Faqbg.png',
+                    width: size.width,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 40, top: 50),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Gap(20),
-                        AutoSizeInterText(
-                          text: 'Frequently Ask Question',
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 40, top: 50),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
+                        'Frequently Ask Question',
+                        style: TextStyle(
                           fontSize: 46,
+                          fontWeight: FontWeight.bold,
                           color: Color(0xFFED2080),
-                          fw: FontWeight.bold,
                           fontFamily: "Poppinsbold",
                         ),
-                        Gap(70),
-                        SizedBox(
-                          width: 1000,
-                          child: AutoSizeInterText(
-                            text:
-                                'The Pamilya platform offers a variety of Filipino-made products. Our goal is to support both Filipino business owners and workers by showcasing the craftsmanship and delicacies from various regions in the Philippines. We invite you to learn more about us and encourage you to reach out with any inquiries you may have.  ',
+                      ),
+                      SizedBox(height: 70),
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          'The Pamilya platform offers a variety of Filipino-made products. Our goal is to support both Filipino business owners and workers by showcasing the craftsmanship and delicacies from various regions in the Philippines.',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
                             fontSize: 24,
-                            color:
-                                Colors.black, // Changed to white for visibility
-                            fw: FontWeight.normal,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
                             fontFamily: "Poppinslight",
-                            align: TextAlign.justify,
-                            maxLines: 10,
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            const Gap(10),
-            Padding(
-              padding: const EdgeInsets.only(left: 150),
-              child: Wrap(
-                alignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                spacing: 100,
-                children: [
-                  SizedBox(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: 500,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: const Color.fromARGB(255, 122, 122,
-                                          122), // Set the border color here
-                                      width:
-                                          1.0, // Adjust the border width as needed
-                                    ),
-                                    borderRadius: BorderRadius.circular(
-                                        8.0), // Optional: add rounded corners
-                                  ),
-                                  child: const ExpansionTile(
-                                    title: Text(
-                                      "Who can sell on Pamilya.com.ph?",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors
-                                            .pink, // Adjust color to match the screenshot
-                                      ),
-                                    ),
-                                    trailing: Icon(
-                                      Icons.expand_more,
-                                      color: Colors.black,
-                                    ),
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: Text(
-                                          "• Pamilya.com.ph welcomes both individuals and businesses "
-                                          "(Christian or non-Christian) who offer products or services "
-                                          "that align with the platform's mission and guidelines.",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 500,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: const Color.fromARGB(255, 122, 122,
-                                          122), // Set the border color here
-                                      width:
-                                          1.0, // Adjust the border width as needed
-                                    ),
-                                    borderRadius: BorderRadius.circular(
-                                        8.0), // Optional: add rounded corners
-                                  ),
-                                  child: const ExpansionTile(
-                                    title: Text(
-                                      "Pre-register as a SELLER on PAMILYA Store",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors
-                                            .pink, // Adjust color to match the screenshot
-                                      ),
-                                    ),
-                                    trailing: Icon(
-                                      Icons.expand_more,
-                                      color: Colors.black,
-                                    ),
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: Text(
-                                          "Please fill out the Google Form that will be sent to you. We still need to gather  your basic details and product information",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 500,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: const Color.fromARGB(255, 122, 122,
-                                          122), // Set the border color here
-                                      width:
-                                          1.0, // Adjust the border width as needed
-                                    ),
-                                    borderRadius: BorderRadius.circular(
-                                        8.0), // Optional: add rounded corners
-                                  ),
-                                  child: const ExpansionTile(
-                                    title: Text(
-                                      "Marketing",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors
-                                            .pink, // Adjust color to match the screenshot
-                                      ),
-                                    ),
-                                    trailing: Icon(
-                                      Icons.expand_more,
-                                      color: Colors.black,
-                                    ),
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        child: Text(
-                                          "Pamilya will handle the marketing ensuring they reach a wider audience. You just need to send us your business logo, product photos and price lists as basis",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 500,
-                        child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: const Color.fromARGB(255, 122, 122,
-                                        122), // Set the border color here
-                                    width:
-                                        1.0, // Adjust the border width as needed
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                      8.0), // Optional: add rounded corners
-                                ),
-                                child: const ExpansionTile(
-                                  title: Text(
-                                    "Shipping",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors
-                                          .pink, // Adjust color to match the screenshot
-                                    ),
-                                  ),
-                                  trailing: Icon(
-                                    Icons.expand_more,
-                                    color: Colors.black,
-                                  ),
-                                  children: <Widget>[
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(
-                                        "• Sellers will be subject to fees, such as service fee from the platform, which is 7%"
-                                        "This will be used to maintain our website and to help you with online marketing your products."
-                                        "Ex. The total sale (including shipping fee) is Php 200,Php"
-                                        ','
-                                        "Php 14.00 will be our service fee.",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 500,
-                        child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: const Color.fromARGB(255, 122, 122,
-                                        122), // Set the border color here
-                                    width:
-                                        1.0, // Adjust the border width as needed
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                      8.0), // Optional: add rounded corners
-                                ),
-                                child: const ExpansionTile(
-                                  title: Text(
-                                    "Payment",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors
-                                          .pink, // Adjust color to match the screenshot
-                                    ),
-                                  ),
-                                  trailing: Icon(
-                                    Icons.expand_more,
-                                    color: Colors.black,
-                                  ),
-                                  children: <Widget>[
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(
-                                        "Once the product is successfully delivered, we will process the payment and it will be credited on your bank account / GCASH number provided during the REGISTRATION. kindly wait for 5-7 banking days.",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 500,
-                        child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: const Color.fromARGB(255, 122, 122,
-                                        122), // Set the border color here
-                                    width:
-                                        1.0, // Adjust the border width as needed
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                      8.0), // Optional: add rounded corners
-                                ),
-                                child: const ExpansionTile(
-                                  title: Text(
-                                    "Are there any fees for selling on pamilya.com.ph",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors
-                                          .pink, // Adjust color to match the screenshot
-                                    ),
-                                  ),
-                                  trailing: Icon(
-                                    Icons.expand_more,
-                                    color: Colors.black,
-                                  ),
-                                  children: <Widget>[
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: Text(
-                                        "Pamilya will handle the marketing ensuring they reach a wider audience. You just need to send us your business logo, product photos and price lists as basis",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const Gap(100),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+          const SizedBox(height: 10),
+          // FAQ Section using mapping
+          Padding(
+            padding: const EdgeInsets.only(left: 150),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 100,
+              children: faqList
+                  .map((faq) => SizedBox(
+                        width: 500,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 122, 122, 122),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: ExpansionTile(
+                                  title: Text(
+                                    faq.title,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.pink,
+                                    ),
+                                  ),
+                                  trailing: const Icon(
+                                    Icons.expand_more,
+                                    color: Colors.black,
+                                  ),
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(
+                                        faq.content,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ],
+      ),
+    );
   }
+}
+
+// Model class for FAQ
+class FAQModel {
+  final String title;
+  final String content;
+
+  FAQModel({required this.title, required this.content});
 }
 
 class TabletView extends StatefulWidget {
@@ -436,14 +208,160 @@ class TabletView extends StatefulWidget {
 
 class _TabletView extends State<TabletView> {
   @override
+  final List<FAQModel> faqList = [
+    FAQModel(
+      title: "Who can sell on Pamilya.com.ph?",
+      content: "• Pamilya.com.ph welcomes both individuals and businesses "
+          "(Christian or non-Christian) who offer products or services "
+          "that align with the platform's mission and guidelines.",
+    ),
+    FAQModel(
+      title: "Pre-register as a SELLER on PAMILYA Store",
+      content:
+          "Please fill out the Google Form that will be sent to you. We still need to gather your basic details and product information.",
+    ),
+    FAQModel(
+      title: "Marketing",
+      content:
+          "Pamilya will handle the marketing ensuring they reach a wider audience. You just need to send us your business logo, product photos, and price lists as basis.",
+    ),
+    FAQModel(
+      title: "Shipping",
+      content:
+          "Sellers will be subject to fees, such as a service fee from the platform, which is 7%. This will be used to maintain our website and to help you with online marketing your products. For example, if the total sale (including shipping fee) is Php 200, Php 14.00 will be our service fee.",
+    ),
+    FAQModel(
+      title: "Payment",
+      content:
+          "Once the product is successfully delivered, we will process the payment and it will be credited to your bank account / GCASH number provided during the REGISTRATION. Kindly wait for 5-7 banking days.",
+    ),
+    FAQModel(
+      title: "Are there any fees for selling on pamilya.com.ph?",
+      content:
+          "Yes, there is a 7% service fee which will be used for maintaining our platform and for marketing your products.",
+    ),
+  ];
+
+  @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
+
     return SizedBox(
-        width: size.width,
-        child: const Wrap(
-            alignment: WrapAlignment.center, spacing: 50, children: [
-        ]
-      ));
+      width: size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // Header with background image and description
+          SizedBox(
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: 1500,
+                  child: Image.asset(
+                    'assets/Faqbg.png',
+                    width: size.width,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 40, top: 50),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
+                        'Frequently Ask Question',
+                        style: TextStyle(
+                          fontSize: 46,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFED2080),
+                          fontFamily: "Poppinsbold",
+                        ),
+                      ),
+                      SizedBox(height: 70),
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          'The Pamilya platform offers a variety of Filipino-made products. Our goal is to support both Filipino business owners and workers by showcasing the craftsmanship and delicacies from various regions in the Philippines.',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                            fontFamily: "Poppinslight",
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          // FAQ Section using mapping
+          Padding(
+            padding: const EdgeInsets.only(left: 150),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 100,
+              children: faqList
+                  .map((faq) => SizedBox(
+                        width: 500,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 122, 122, 122),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: ExpansionTile(
+                                  title: Text(
+                                    faq.title,
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.pink,
+                                    ),
+                                  ),
+                                  trailing: const Icon(
+                                    Icons.expand_more,
+                                    color: Colors.black,
+                                  ),
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(
+                                        faq.content,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ))
+                  .toList(),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -456,13 +374,156 @@ class MobileView extends StatefulWidget {
 
 class _MobileViewState extends State<MobileView> {
   @override
+  final List<FAQModel> faqList = [
+    FAQModel(
+      title: "Who can sell on Pamilya.com.ph?",
+      content: "• Pamilya.com.ph welcomes both individuals and businesses "
+          "(Christian or non-Christian) who offer products or services "
+          "that align with the platform's mission and guidelines.",
+    ),
+    FAQModel(
+      title: "Pre-register as a SELLER on PAMILYA Store",
+      content:
+          "Please fill out the Google Form that will be sent to you. We still need to gather your basic details and product information.",
+    ),
+    FAQModel(
+      title: "Marketing",
+      content:
+          "Pamilya will handle the marketing ensuring they reach a wider audience. You just need to send us your business logo, product photos, and price lists as basis.",
+    ),
+    FAQModel(
+      title: "Shipping",
+      content:
+          "Sellers will be subject to fees, such as a service fee from the platform, which is 7%. This will be used to maintain our website and to help you with online marketing your products. For example, if the total sale (including shipping fee) is Php 200, Php 14.00 will be our service fee.",
+    ),
+    FAQModel(
+      title: "Payment",
+      content:
+          "Once the product is successfully delivered, we will process the payment and it will be credited to your bank account / GCASH number provided during the REGISTRATION. Kindly wait for 5-7 banking days.",
+    ),
+    FAQModel(
+      title: "Are there any fees for selling on pamilya.com.ph?",
+      content:
+          "Yes, there is a 7% service fee which will be used for maintaining our platform and for marketing your products.",
+    ),
+  ];
+
+  @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
+
     return SizedBox(
-        width: size.width,
-        child: const Wrap(
-            alignment: WrapAlignment.center, spacing: 50, children: [
-        ]
-      ));
+      width: size.width,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // Header with background image and description
+          SizedBox(
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: size.width,
+                  child: Image.asset(
+                    'assets/Faqbg.png',
+                    width: size.width,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 10, top: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10),
+                      Text(
+                        'Frequently Ask Question',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFED2080),
+                          fontFamily: "Poppinsbold",
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: SizedBox(
+                          width: 270,
+                          child: Text(
+                            'The Pamilya platform offers a variety of Filipino-made products. Our goal is to support both Filipino business owners and workers by showcasing the craftsmanship and delicacies from various regions in the Philippines.',
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: "Poppinslight",
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          // FAQ Section using mapping
+          Column(
+            children: faqList
+                .map((faq) => SizedBox(
+                      width: 340,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 122, 122, 122),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: ExpansionTile(
+                                title: Text(
+                                  faq.title,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.pink,
+                                  ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.expand_more,
+                                  color: Colors.black,
+                                ),
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
+                                    child: Text(
+                                      faq.content,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ))
+                .toList(),
+          ),
+        ],
+      ),
+    );
   }
 }
