@@ -26,7 +26,6 @@ class MobileAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Container(
       // Wrap the entire app bar in a Container to provide a solid background
       color:
