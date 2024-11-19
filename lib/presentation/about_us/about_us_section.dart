@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:pamilya_project1/widgets/auto_size_inter_text.dart';
+import 'dart:async';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -36,6 +37,35 @@ class WebView extends StatefulWidget {
 }
 
 class _WebView extends State<WebView> {
+  int? hoverIndex;
+  List<String> imgList = [
+    'assets/autofade/img1_home.png',
+    'assets/autofade/img2_home.png',
+    'assets/autofade/img3_home.png',
+    'assets/asians-market-bambo.png',
+  ];
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startAutoFade();
+  }
+
+  void _startAutoFade() {
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+      setState(() {
+        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -51,9 +81,23 @@ class _WebView extends State<WebView> {
                 children: [
                   SizedBox(
                     width: size.width,
-                    child: Image.asset(
-                      'assets/asians-market-bambo.png',
-                      width: size.width,
+                    height: 800,
+                    child: Stack(
+                      children: imgList.asMap().entries.map((entry) {
+                        int index = entry.key;
+                        String imgPath = entry.value;
+                        return AnimatedOpacity(
+                          opacity: hoverIndex == index ? 1.0 : 0.0,
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          child: Image.asset(
+                            imgPath,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: double.infinity,
+                          ),
+                        );
+                      }).toList(),
                     ),
                   ),
                   Positioned.fill(
@@ -65,18 +109,18 @@ class _WebView extends State<WebView> {
                         padding: const EdgeInsets.only(
                             left: 100.0), // Adjust the left padding as needed
                         child: SizedBox(
-                          width: 600,
+                          width: 700,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment
                                 .center, // Center the text vertically
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const SizedBox(
-                                width: 550,
+                                width: 700,
                                 child: AutoSizeInterText(
                                   text:
                                       'Discover Local Treasures, Delivered to Your Doorstep.',
-                                  fontSize: 50,
+                                  fontSize: 70,
                                   color: Colors
                                       .white, // Changed to white for visibility
                                   fw: FontWeight.bold,
@@ -92,7 +136,7 @@ class _WebView extends State<WebView> {
                                 child: AutoSizeInterText(
                                   text:
                                       'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
-                                  fontSize: 18,
+                                  fontSize: 20,
                                   color: Colors.white,
                                   fw: FontWeight.normal,
                                   fontFamily: "Poppinslight",
@@ -152,7 +196,8 @@ class _WebView extends State<WebView> {
                               .withOpacity(0.3), // Shadow color with opacity
                           spreadRadius: 5, // How wide the shadow spreads
                           blurRadius: 10, // How soft the shadow looks
-                          offset: const Offset(0, 5), // Position of the shadow (x, y)
+                          offset: const Offset(
+                              0, 5), // Position of the shadow (x, y)
                         ),
                       ],
                     ),
@@ -343,7 +388,35 @@ class TabletView extends StatefulWidget {
 }
 
 class _TabletView extends State<TabletView> {
+  int? hoverIndex;
+  List<String> imgList = [
+    'assets/autofade/img1_home.png',
+    'assets/autofade/img2_home.png',
+    'assets/autofade/img3_home.png',
+    'assets/asians-market-bambo.png',
+  ];
+  late Timer _timer;
+
   @override
+  void initState() {
+    super.initState();
+    _startAutoFade();
+  }
+
+  void _startAutoFade() {
+    _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
+      setState(() {
+        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     return Container(
@@ -359,9 +432,23 @@ class _TabletView extends State<TabletView> {
                 children: [
                   SizedBox(
                     width: size.width,
-                    child: Image.asset(
-                      'assets/asians-market-bambo.png',
-                      width: size.width,
+                    height: 800,
+                    child: Stack(
+                      children: imgList.asMap().entries.map((entry) {
+                        int index = entry.key;
+                        String imgPath = entry.value;
+                        return AnimatedOpacity(
+                          opacity: hoverIndex == index ? 1.0 : 0.0,
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          child: Image.asset(
+                            imgPath,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: double.infinity,
+                          ),
+                        );
+                      }).toList(),
                     ),
                   ),
                   Positioned.fill(
@@ -444,6 +531,7 @@ class _TabletView extends State<TabletView> {
                   ),
                 ],
               ),
+
               const Gap(100),
               Column(
                 children: [
@@ -456,7 +544,8 @@ class _TabletView extends State<TabletView> {
                               .withOpacity(0.3), // Shadow color with opacity
                           spreadRadius: 5, // How wide the shadow spreads
                           blurRadius: 10, // How soft the shadow looks
-                          offset: const Offset(0, 5), // Position of the shadow (x, y)
+                          offset: const Offset(
+                              0, 5), // Position of the shadow (x, y)
                         ),
                       ],
                     ),
@@ -632,6 +721,14 @@ class _TabletView extends State<TabletView> {
                   ],
                 ),
               ),
+              SizedBox(
+                  child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(
+                  'assets/rds.png',
+                  width: 100,
+                ),
+              )),
             ],
           ))),
     );
@@ -646,6 +743,35 @@ class MobileView extends StatefulWidget {
 }
 
 class _MobileViewState extends State<MobileView> {
+  int? hoverIndex;
+  List<String> imgList = [
+    'assets/autofade/img1_home.png',
+    'assets/autofade/img2_home.png',
+    'assets/autofade/img3_home.png',
+    'assets/asians-market-bambo.png',
+  ];
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startAutoFade();
+  }
+
+  void _startAutoFade() {
+    _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
+      setState(() {
+        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -661,11 +787,23 @@ class _MobileViewState extends State<MobileView> {
               children: [
                 SizedBox(
                   width: size.width,
-                  child: Image.asset(
-                    'assets/asians-market-bambo.png',
-                    width: size.width,
-                    height: 600,
-                    fit: BoxFit.cover,
+                  height: 800,
+                  child: Stack(
+                    children: imgList.asMap().entries.map((entry) {
+                      int index = entry.key;
+                      String imgPath = entry.value;
+                      return AnimatedOpacity(
+                        opacity: hoverIndex == index ? 1.0 : 0.0,
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeInOut,
+                        child: Image.asset(
+                          imgPath,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      );
+                    }).toList(),
                   ),
                 ),
                 Positioned.fill(
@@ -758,7 +896,8 @@ class _MobileViewState extends State<MobileView> {
                           .withOpacity(0.3), // Shadow color with opacity
                       spreadRadius: 5, // How wide the shadow spreads
                       blurRadius: 10, // How soft the shadow looks
-                      offset: const Offset(0, 5), // Position of the shadow (x, y)
+                      offset:
+                          const Offset(0, 5), // Position of the shadow (x, y)
                     ),
                   ],
                 ),

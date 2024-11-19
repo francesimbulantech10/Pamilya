@@ -278,7 +278,7 @@ class _WebView extends State<WebView> {
                             Gap(100),
                             AutoSizeInterText(
                               text:
-                                  'Connect with thousands of buyers across the country.',
+                                  'Connect with thousands of buyers across the country',
                               fontSize: 18,
                               color: Colors
                                   .black, // Changed to white for visibility
@@ -787,7 +787,7 @@ class _TabletView extends State<TabletView> {
                               Gap(100),
                               AutoSizeInterText(
                                 text:
-                                    'Connect with thousands of buyers across the country.',
+                                    'Connect with thousands of buyers across the country',
                                 fontSize: 18,
                                 color: Colors
                                     .black, // Changed to white for visibility
@@ -1304,7 +1304,7 @@ class _MobileViewState extends State<MobileView> {
                               Gap(100),
                               AutoSizeInterText(
                                 text:
-                                    'Connect with thousands of buyers across the country.',
+                                    'Connect with thousands of buyers across the country',
                                 fontSize: 18,
                                 color: Colors
                                     .black, // Changed to white for visibility

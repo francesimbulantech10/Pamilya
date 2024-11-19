@@ -71,27 +71,216 @@ class _WebView extends State<WebView> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group1.png'),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow1.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'FREE MARKETING & ADVERTISEMENT',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '• Using the Pamilya.com.ph platform will help entrepreneurs: ',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '1.   Reach a wider audience of Filipino families across the Philippines.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '2. Showcase their products and services to thousands of potential customers.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '3. You will have brand visibility through the website and social media pages of PAMILYA.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const Gap(50),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/ads.png'),
-                        )
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow2.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'PROVIDE FREE ACCOUNT REGISTRATION & SIGN UP',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'Pamilya.com.ph will be an online platform for Christian  Entrepreneurs which will provide FREE registration and sign-up.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                     Column(
                       children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group2.png'),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow4.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'WHAT DO YOU NEED TO SIGN UP :',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'Pre-registration form will be sent to you after the Business Opportunity Meeting for review and approval.PAMILYA Team will be the one to create an account with you for hassle-free registration. Account Details will be then sent to your active email address.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group3.png'),
-                        )
+                        const Gap(50),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow3.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'PROVIDE YOU ADDITIONAL SALES',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          '•Pamilya.com.ph will HELP YOU gain additional sales on top of your existing marketing platforms (Shopee, Lazada, social media pages, etc).•Since we are also pursuing bulk orders, this could potentially increase sales on a large scale and help you gain consistent buyers.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ],
@@ -163,7 +352,7 @@ class _TabletView extends State<TabletView> {
               maxLines: 20,
             ),
             const Gap(100),
-            Wrap(
+            Column(
               spacing: 50,
               children: [
                 SizedBox(
@@ -173,31 +362,220 @@ class _TabletView extends State<TabletView> {
                       width: size.width,
                     )),
                 const Gap(50),
-                Wrap(
+                Column(
                   children: [
                     Column(
                       children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group1.png'),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow1.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'FREE MARKETING & ADVERTISEMENT',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '• Using the Pamilya.com.ph platform will help entrepreneurs: ',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '1.   Reach a wider audience of Filipino families across the Philippines.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '2. Showcase their products and services to thousands of potential customers.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '3. You will have brand visibility through the website and social media pages of PAMILYA.',
+                                          fontSize: 8,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.start,
+                                          maxLines: 30,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const Gap(50),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/ads.png'),
-                        )
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow2.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'PROVIDE FREE ACCOUNT REGISTRATION & SIGN UP',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'Pamilya.com.ph will be an online platform for Christian  Entrepreneurs which will provide FREE registration and sign-up.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                     Column(
                       children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group2.png'),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow4.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'WHAT DO YOU NEED TO SIGN UP :',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          'Pre-registration form will be sent to you after the Business Opportunity Meeting for review and approval.PAMILYA Team will be the one to create an account with you for hassle-free registration. Account Details will be then sent to your active email address.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group3.png'),
-                        )
+                        const Gap(50),
+                        Stack(
+                          children: [
+                            SizedBox(
+                              width: 520,
+                              child: Image.asset('assets/boxshadow3.png'),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 60, top: 10),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text: 'PROVIDE YOU ADDITIONAL SALES',
+                                      fontSize: 15,
+                                      color: Color(0xFFED2080),
+                                      fw: FontWeight.bold,
+                                      fontFamily: "Poppinsbold",
+                                      maxLines: 20,
+                                    ),
+                                  ),
+                                  Gap(20),
+                                  SizedBox(
+                                    width: 400,
+                                    child: AutoSizeInterText(
+                                      text:
+                                          '•Pamilya.com.ph will HELP YOU gain additional sales on top of your existing marketing platforms (Shopee, Lazada, social media pages, etc).•Since we are also pursuing bulk orders, this could potentially increase sales on a large scale and help you gain consistent buyers.',
+                                      fontSize: 14,
+                                      color: Colors.black,
+                                      fw: FontWeight.normal,
+                                      fontFamily: "Poppinslight",
+                                      align: TextAlign.center,
+                                      maxLines: 30,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ],
@@ -277,7 +655,7 @@ class _MobileViewState extends State<MobileView> {
               ),
             ),
             const Gap(100),
-            Wrap(
+            Column(
               spacing: 50,
               children: [
                 SizedBox(
@@ -287,35 +665,236 @@ class _MobileViewState extends State<MobileView> {
                       width: size.width,
                     )),
                 const Gap(50),
-                Wrap(
+                Column(
+                  spacing: 50,
                   children: [
                     Column(
                       children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group1.png'),
+                        Column(
+                          children: [
+                            Stack(
+                              children: [
+                                SizedBox(
+                                  width: 520,
+                                  child: Image.asset(
+                                    'assets/boxshadow1mobileview.png',
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 40, top: 40),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              'FREE MARKETING & ADVERTISEMENT',
+                                          fontSize: 18,
+                                          color: Color(0xFFED2080),
+                                          fw: FontWeight.bold,
+                                          fontFamily: "Poppinsbold",
+                                          maxLines: 20,
+                                        ),
+                                      ),
+                                      Gap(5),
+                                      Column(
+                                        children: [
+                                          SizedBox(
+                                            width: 350,
+                                            child: AutoSizeInterText(
+                                              text:
+                                                  '• Using the Pamilya.com.ph platform will help entrepreneurs: ',
+                                              fontSize: 14,
+                                              color: Colors.black,
+                                              fw: FontWeight.normal,
+                                              fontFamily: "Poppinslight",
+                                              align: TextAlign.start,
+                                              maxLines: 30,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 300,
+                                            child: AutoSizeInterText(
+                                              text:
+                                                  '1.   Reach a wider audience of Filipino families across the Philippines.',
+                                              fontSize: 14,
+                                              color: Colors.black,
+                                              fw: FontWeight.normal,
+                                              fontFamily: "Poppinslight",
+                                              align: TextAlign.start,
+                                              maxLines: 30,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 300,
+                                            child: AutoSizeInterText(
+                                              text:
+                                                  '2. Showcase their products and services to thousands of potential customers.',
+                                              fontSize: 14,
+                                              color: Colors.black,
+                                              fw: FontWeight.normal,
+                                              fontFamily: "Poppinslight",
+                                              align: TextAlign.start,
+                                              maxLines: 30,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 300,
+                                            child: AutoSizeInterText(
+                                              text:
+                                                  '3. You will have brand visibility through the website and social media pages of PAMILYA.',
+                                              fontSize: 14,
+                                              color: Colors.black,
+                                              fw: FontWeight.normal,
+                                              fontFamily: "Poppinslight",
+                                              align: TextAlign.start,
+                                              maxLines: 30,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Gap(50),
+                            Stack(
+                              children: [
+                                SizedBox(
+                                  width: 520,
+                                  child: Image.asset(
+                                      'assets/boxshadow2mobile.png'),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 40, top: 40),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 500,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              'PROVIDE FREE ACCOUNT REGISTRATION & SIGN UP',
+                                          fontSize: 18,
+                                          color: Color(0xFFED2080),
+                                          fw: FontWeight.bold,
+                                          fontFamily: "Poppinsbold",
+                                          maxLines: 20,
+                                        ),
+                                      ),
+                                      Gap(20),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              'Pamilya.com.ph will be an online platform for Christian  Entrepreneurs which will provide FREE registration and sign-up.',
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.center,
+                                          maxLines: 30,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        const Gap(50),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/ads.png'),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group2.png'),
+                        Column(
+                          children: [
+                            Stack(
+                              children: [
+                                SizedBox(
+                                  width: 520,
+                                  child: Image.asset(
+                                      'assets/boxshadow4mobile.png'),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 40, top: 40),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text: 'WHAT DO YOU NEED TO SIGN UP :',
+                                          fontSize: 18,
+                                          color: Color(0xFFED2080),
+                                          fw: FontWeight.bold,
+                                          fontFamily: "Poppinsbold",
+                                          maxLines: 20,
+                                        ),
+                                      ),
+                                      Gap(20),
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              'Pre-registration form will be sent to you after the Business Opportunity Meeting for review and approval.PAMILYA Team will be the one to create an account with you for hassle-free registration. Account Details will be then sent to your active email address.',
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.center,
+                                          maxLines: 30,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Gap(50),
+                            Stack(
+                              children: [
+                                SizedBox(
+                                  width: 520,
+                                  child: Image.asset(
+                                      'assets/boxshadow3mobile.png'),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 40, top: 40),
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        width: 400,
+                                        child: AutoSizeInterText(
+                                          text: 'PROVIDE YOU ADDITIONAL SALES',
+                                          fontSize: 18,
+                                          color: Color(0xFFED2080),
+                                          fw: FontWeight.bold,
+                                          fontFamily: "Poppinsbold",
+                                          maxLines: 20,
+                                        ),
+                                      ),
+                                      Gap(20),
+                                      SizedBox(
+                                        width: 300,
+                                        child: AutoSizeInterText(
+                                          text:
+                                              '•Pamilya.com.ph will HELP YOU gain additional sales on top of your existing marketing platforms (Shopee, Lazada, social media pages, etc).•Since we are also pursuing bulk orders, this could potentially increase sales on a large scale and help you gain consistent buyers.',
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                          fw: FontWeight.normal,
+                                          fontFamily: "Poppinslight",
+                                          align: TextAlign.center,
+                                          maxLines: 30,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 500,
-                          child: Image.asset('assets/group3.png'),
-                        )
                       ],
-                    ),
+                    )
                   ],
-                )
+                ),
               ],
             ),
             const Gap(50),
