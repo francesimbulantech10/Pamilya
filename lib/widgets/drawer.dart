@@ -50,9 +50,9 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                     height: 10,
                   ),
                   AppBarMenus(
-                    title: "About-us",
+                    title: "About us",
                     action: () {
-                      context.go('/');         
+                      context.go('/');
                     },
                     isActive: activePage == "Home",
                     fontWeight: FontWeight.bold, // Make Home bold
@@ -67,7 +67,7 @@ class _AppBarDrawerState extends State<AppBarDrawer> {
                     fontWeight: FontWeight.bold, // Make Our Blog normal
                   ),
                   AppBarMenus(
-                    title: "Advantages",
+                    title: "Why Go with us",
                     action: () {
                       context.go('/be-our-partner');
                     },

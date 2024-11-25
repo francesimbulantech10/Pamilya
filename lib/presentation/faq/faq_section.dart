@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:pamilya_project1/widgets/auto_size_inter_text.dart';
+
 
 class FAQSection extends StatefulWidget {
   const FAQSection({super.key});
