@@ -37,35 +37,6 @@ class WebView extends StatefulWidget {
 }
 
 class _WebView extends State<WebView> {
-  int? hoverIndex;
-  List<String> imgList = [
-    'assets/autofade/img1_home.png',
-    'assets/autofade/img2_home.png',
-    'assets/autofade/img3_home.png',
-    'assets/asians-market-bambo.png',
-  ];
-  late Timer _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _startAutoFade();
-  }
-
-  void _startAutoFade() {
-    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
-      setState(() {
-        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -81,23 +52,9 @@ class _WebView extends State<WebView> {
                 children: [
                   SizedBox(
                     width: size.width,
-                    height: 800,
-                    child: Stack(
-                      children: imgList.asMap().entries.map((entry) {
-                        int index = entry.key;
-                        String imgPath = entry.value;
-                        return AnimatedOpacity(
-                          opacity: hoverIndex == index ? 1.0 : 0.0,
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeInOut,
-                          child: Image.asset(
-                            imgPath,
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                            height: double.infinity,
-                          ),
-                        );
-                      }).toList(),
+                    child: Image.asset(
+                      'assets/asians-market-bambo.png',
+                      width: size.width,
                     ),
                   ),
                   Positioned.fill(
@@ -109,18 +66,18 @@ class _WebView extends State<WebView> {
                         padding: const EdgeInsets.only(
                             left: 100.0), // Adjust the left padding as needed
                         child: SizedBox(
-                          width: 700,
+                          width: 600,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment
                                 .center, // Center the text vertically
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const SizedBox(
-                                width: 700,
+                                width: 550,
                                 child: AutoSizeInterText(
                                   text:
                                       'Discover Local Treasures, Delivered to Your Doorstep.',
-                                  fontSize: 70,
+                                  fontSize: 50,
                                   color: Colors
                                       .white, // Changed to white for visibility
                                   fw: FontWeight.bold,
@@ -136,7 +93,7 @@ class _WebView extends State<WebView> {
                                 child: AutoSizeInterText(
                                   text:
                                       'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fw: FontWeight.normal,
                                   fontFamily: "Poppinslight",
@@ -148,9 +105,7 @@ class _WebView extends State<WebView> {
                                 child: TextButton(
                                   onPressed: () async {
                                     const url = 'https://pamilya.com.ph';
-                                    // ignore: deprecated_member_use
                                     if (await canLaunch(url)) {
-                                      // ignore: deprecated_member_use
                                       await launch(url);
                                     } else {
                                       throw 'Could not launch $url';
@@ -180,6 +135,109 @@ class _WebView extends State<WebView> {
                   ),
                 ],
               ),
+              // Stack(
+              //   children: [
+              //     SizedBox(
+              //       width: size.width,
+              //       height: 800,
+              //       child: Stack(
+              //         children: imgList.asMap().entries.map((entry) {
+              //           int index = entry.key;
+              //           String imgPath = entry.value;
+              //           return AnimatedOpacity(
+              //             opacity: hoverIndex == index ? 1.0 : 0.0,
+              //             duration: const Duration(seconds: 1),
+              //             curve: Curves.easeInOut,
+              //             child: Image.asset(
+              //               imgPath,
+              //               fit: BoxFit.cover,
+              //               width: double.infinity,
+              //               height: double.infinity,
+              //             ),
+              //           );
+              //         }).toList(),
+              //       ),
+              //     ),
+              //     Positioned.fill(
+              //       child: Container(
+              //         alignment: Alignment.centerLeft, // Keep this as is
+              //         // ignore: deprecated_member_use
+
+              //         child: Padding(
+              //           padding: const EdgeInsets.only(
+              //               left: 100.0), // Adjust the left padding as needed
+              //           child: SizedBox(
+              //             width: 700,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment
+              //                   .center, // Center the text vertically
+              //               crossAxisAlignment: CrossAxisAlignment.start,
+              //               children: [
+              //                 const SizedBox(
+              //                   width: 700,
+              //                   child: AutoSizeInterText(
+              //                     text:
+              //                         'Discover Local Treasures, Delivered to Your Doorstep.',
+              //                     fontSize: 70,
+              //                     color: Colors
+              //                         .white, // Changed to white for visibility
+              //                     fw: FontWeight.bold,
+              //                     fontFamily: "Poppinsbold",
+              //                     maxLines: 2,
+              //                   ),
+              //                 ),
+
+              //                 const SizedBox(
+              //                     height: 50), // Add space between the texts
+              //                 const SizedBox(
+              //                   width: 500,
+              //                   child: AutoSizeInterText(
+              //                     text:
+              //                         'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
+              //                     fontSize: 20,
+              //                     color: Colors.white,
+              //                     fw: FontWeight.normal,
+              //                     fontFamily: "Poppinslight",
+              //                     maxLines: 5,
+              //                   ),
+              //                 ),
+              //                 const Gap(50),
+              //                 SizedBox(
+              //                   child: TextButton(
+              //                     onPressed: () async {
+              //                       const url = 'https://pamilya.com.ph';
+              //                       // ignore: deprecated_member_use
+              //                       if (await canLaunch(url)) {
+              //                         // ignore: deprecated_member_use
+              //                         await launch(url);
+              //                       } else {
+              //                         throw 'Could not launch $url';
+              //                       }
+              //                     },
+              //                     style: TextButton.styleFrom(
+              //                       backgroundColor: const Color(
+              //                           0xFF404FA1), // Set background color to #404FA1
+              //                       padding: const EdgeInsets.symmetric(
+              //                           horizontal: 16, vertical: 8),
+              //                     ),
+              //                     child: const Text(
+              //                       'Shop Now',
+              //                       style: TextStyle(
+              //                         color: Colors
+              //                             .white, // Set text color for visibility
+              //                         fontSize: 16,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               const Gap(100),
               Wrap(
                 alignment: WrapAlignment.center,
@@ -388,34 +446,34 @@ class TabletView extends StatefulWidget {
 }
 
 class _TabletView extends State<TabletView> {
-  int? hoverIndex;
-  List<String> imgList = [
-    'assets/autofade/img1_home.png',
-    'assets/autofade/img2_home.png',
-    'assets/autofade/img3_home.png',
-    'assets/asians-market-bambo.png',
-  ];
-  late Timer _timer;
+  // int? hoverIndex;
+  // List<String> imgList = [
+  //   'assets/autofade/img1_home.png',
+  //   'assets/autofade/img2_home.png',
+  //   'assets/autofade/img3_home.png',
+  //   'assets/asians-market-bambo.png',
+  // ];
+  // late Timer _timer;
 
-  @override
-  void initState() {
-    super.initState();
-    _startAutoFade();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _startAutoFade();
+  // }
 
-  void _startAutoFade() {
-    _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
-      setState(() {
-        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
-      });
-    });
-  }
+  // void _startAutoFade() {
+  //   _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
+  //     setState(() {
+  //       hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
+  //     });
+  //   });
+  // }
 
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _timer.cancel();
+  //   super.dispose();
+  // }
 
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -428,27 +486,116 @@ class _TabletView extends State<TabletView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Gap(70),
+              // Stack(
+              //   children: [
+              //     SizedBox(
+              //       width: size.width,
+              //       height: 800,
+              //       child: Stack(
+              //         children: imgList.asMap().entries.map((entry) {
+              //           int index = entry.key;
+              //           String imgPath = entry.value;
+              //           return AnimatedOpacity(
+              //             opacity: hoverIndex == index ? 1.0 : 0.0,
+              //             duration: const Duration(seconds: 1),
+              //             curve: Curves.easeInOut,
+              //             child: Image.asset(
+              //               imgPath,
+              //               fit: BoxFit.cover,
+              //               width: double.infinity,
+              //               height: double.infinity,
+              //             ),
+              //           );
+              //         }).toList(),
+              //       ),
+              //     ),
+              //     Positioned.fill(
+              //       child: Container(
+              //         alignment: Alignment.centerLeft, // Keep this as is
+              //         // ignore: deprecated_member_use
+
+              //         child: Padding(
+              //           padding: const EdgeInsets.only(
+              //               left: 100.0), // Adjust the left padding as needed
+              //           child: SizedBox(
+              //             width: 600,
+              //             child: Column(
+              //               mainAxisAlignment: MainAxisAlignment
+              //                   .center, // Center the text vertically
+              //               crossAxisAlignment: CrossAxisAlignment.start,
+              //               children: [
+              //                 SizedBox(
+              //                   width: size.width * .4,
+              //                   child: const AutoSizeInterText(
+              //                     text:
+              //                         'Discover Local Treasures, Delivered to Your Doorstep.',
+              //                     fontSize: 50,
+              //                     color: Colors
+              //                         .white, // Changed to white for visibility
+              //                     fw: FontWeight.bold,
+              //                     fontFamily: "Poppinsbold",
+              //                     maxLines: 2,
+              //                   ),
+              //                 ),
+
+              //                 const SizedBox(
+              //                     height: 50), // Add space between the texts
+              //                 SizedBox(
+              //                   width: size.width * .4,
+              //                   child: const AutoSizeInterText(
+              //                     text:
+              //                         'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
+              //                     fontSize: 18,
+              //                     color: Colors.white,
+              //                     fw: FontWeight.normal,
+              //                     fontFamily: "Poppinslight",
+              //                     maxLines: 5,
+              //                   ),
+              //                 ),
+              //                 const Gap(50),
+              //                 SizedBox(
+              //                   child: TextButton(
+              //                     onPressed: () async {
+              //                       const url = 'https://pamilya.com.ph';
+              //                       // ignore: deprecated_member_use
+              //                       if (await canLaunch(url)) {
+              //                         // ignore: deprecated_member_use
+              //                         await launch(url);
+              //                       } else {
+              //                         throw 'Could not launch $url';
+              //                       }
+              //                     },
+              //                     style: TextButton.styleFrom(
+              //                       backgroundColor: const Color(
+              //                           0xFF404FA1), // Set background color to #404FA1
+              //                       padding: const EdgeInsets.symmetric(
+              //                           horizontal: 16, vertical: 8),
+              //                     ),
+              //                     child: const Text(
+              //                       'Shop Now',
+              //                       style: TextStyle(
+              //                         color: Colors
+              //                             .white, // Set text color for visibility
+              //                         fontSize: 16,
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Stack(
                 children: [
                   SizedBox(
                     width: size.width,
-                    height: 800,
-                    child: Stack(
-                      children: imgList.asMap().entries.map((entry) {
-                        int index = entry.key;
-                        String imgPath = entry.value;
-                        return AnimatedOpacity(
-                          opacity: hoverIndex == index ? 1.0 : 0.0,
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeInOut,
-                          child: Image.asset(
-                            imgPath,
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                            height: double.infinity,
-                          ),
-                        );
-                      }).toList(),
+                    child: Image.asset(
+                      'assets/asians-market-bambo.png',
+                      width: size.width,
                     ),
                   ),
                   Positioned.fill(
@@ -466,9 +613,9 @@ class _TabletView extends State<TabletView> {
                                 .center, // Center the text vertically
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(
-                                width: size.width * .4,
-                                child: const AutoSizeInterText(
+                              const SizedBox(
+                                width: 550,
+                                child: AutoSizeInterText(
                                   text:
                                       'Discover Local Treasures, Delivered to Your Doorstep.',
                                   fontSize: 50,
@@ -482,9 +629,9 @@ class _TabletView extends State<TabletView> {
 
                               const SizedBox(
                                   height: 50), // Add space between the texts
-                              SizedBox(
-                                width: size.width * .4,
-                                child: const AutoSizeInterText(
+                              const SizedBox(
+                                width: 500,
+                                child: AutoSizeInterText(
                                   text:
                                       'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
                                   fontSize: 18,
@@ -499,9 +646,7 @@ class _TabletView extends State<TabletView> {
                                 child: TextButton(
                                   onPressed: () async {
                                     const url = 'https://pamilya.com.ph';
-                                    // ignore: deprecated_member_use
                                     if (await canLaunch(url)) {
-                                      // ignore: deprecated_member_use
                                       await launch(url);
                                     } else {
                                       throw 'Could not launch $url';
@@ -531,7 +676,6 @@ class _TabletView extends State<TabletView> {
                   ),
                 ],
               ),
-
               const Gap(100),
               Column(
                 children: [
@@ -721,14 +865,6 @@ class _TabletView extends State<TabletView> {
                   ],
                 ),
               ),
-              SizedBox(
-                  child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.asset(
-                  'assets/rds.png',
-                  width: 100,
-                ),
-              )),
             ],
           ))),
     );
@@ -743,34 +879,34 @@ class MobileView extends StatefulWidget {
 }
 
 class _MobileViewState extends State<MobileView> {
-  int? hoverIndex;
-  List<String> imgList = [
-    'assets/autofade/img1_home.png',
-    'assets/autofade/img2_home.png',
-    'assets/autofade/img3_home.png',
-    'assets/asians-market-bambo.png',
-  ];
-  late Timer _timer;
+  // int? hoverIndex;
+  // List<String> imgList = [
+  //   'assets/autofade/img1_home.png',
+  //   'assets/autofade/img2_home.png',
+  //   'assets/autofade/img3_home.png',
+  //   'assets/asians-market-bambo.png',
+  // ];
+  // late Timer _timer;
 
-  @override
-  void initState() {
-    super.initState();
-    _startAutoFade();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _startAutoFade();
+  // }
 
-  void _startAutoFade() {
-    _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
-      setState(() {
-        hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
-      });
-    });
-  }
+  // void _startAutoFade() {
+  //   _timer = Timer.periodic(const Duration(seconds: 8), (Timer timer) {
+  //     setState(() {
+  //       hoverIndex = ((hoverIndex ?? 0) + 1) % imgList.length;
+  //     });
+  //   });
+  // }
 
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _timer.cancel();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -781,109 +917,196 @@ class _MobileViewState extends State<MobileView> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 600,
-            child: Stack(
-              children: [
-                SizedBox(
-                  width: size.width,
-                  height: 800,
-                  child: Stack(
-                    children: imgList.asMap().entries.map((entry) {
-                      int index = entry.key;
-                      String imgPath = entry.value;
-                      return AnimatedOpacity(
-                        opacity: hoverIndex == index ? 1.0 : 0.0,
-                        duration: const Duration(seconds: 1),
-                        curve: Curves.easeInOut,
-                        child: Image.asset(
-                          imgPath,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
-                      );
-                    }).toList(),
+           Stack(
+                children: [
+                  SizedBox(
+                    width: size.width,
+                    child: Image.asset(
+                      'assets/asians-market-bambo.png',
+                      width: size.width,
+                    ),
                   ),
-                ),
-                Positioned.fill(
-                  child: Container(
-                    alignment: Alignment.topCenter, // Keep this as is
-                    // ignore: deprecated_member_use
+                  Positioned.fill(
+                    child: Container(
+                      alignment: Alignment.centerLeft, // Keep this as is
+                      // ignore: deprecated_member_use
 
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20), // Adjust the left padding as needed
-                      child: SizedBox(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment
-                              .center, // Center the text vertically
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              child: AutoSizeInterText(
-                                text:
-                                    'Discover Local Treasures, Delivered to Your Doorstep.',
-                                fontSize: 50,
-                                color: Colors
-                                    .white, // Changed to white for visibility
-                                fw: FontWeight.bold,
-                                fontFamily: "Poppinsbold",
-                                maxLines: 2,
-                              ),
-                            ),
-
-                            const SizedBox(
-                                height: 50), // Add space between the texts
-                            const SizedBox(
-                              child: AutoSizeInterText(
-                                text:
-                                    'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
-                                fontSize: 18,
-                                color: Colors.white,
-                                fw: FontWeight.normal,
-                                fontFamily: "Poppinslight",
-                                maxLines: 5,
-                              ),
-                            ),
-                            const Gap(50),
-                            SizedBox(
-                              child: TextButton(
-                                onPressed: () async {
-                                  const url = 'https://pamilya.com.ph';
-                                  // ignore: deprecated_member_use
-                                  if (await canLaunch(url)) {
-                                    // ignore: deprecated_member_use
-                                    await launch(url);
-                                  } else {
-                                    throw 'Could not launch $url';
-                                  }
-                                },
-                                style: TextButton.styleFrom(
-                                  backgroundColor: const Color(
-                                      0xFF404FA1), // Set background color to #404FA1
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 8),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 100.0), // Adjust the left padding as needed
+                        child: SizedBox(
+                          width: 600,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment
+                                .center, // Center the text vertically
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                width: 550,
+                                child: AutoSizeInterText(
+                                  text:
+                                      'Discover Local Treasures, Delivered to Your Doorstep.',
+                                  fontSize: 50,
+                                  color: Colors
+                                      .white, // Changed to white for visibility
+                                  fw: FontWeight.bold,
+                                  fontFamily: "Poppinsbold",
+                                  maxLines: 2,
                                 ),
-                                child: const Text(
-                                  'Shop Now',
-                                  style: TextStyle(
-                                    color: Colors
-                                        .white, // Set text color for visibility
-                                    fontSize: 16,
+                              ),
+
+                              const SizedBox(
+                                  height: 50), // Add space between the texts
+                              const SizedBox(
+                                width: 500,
+                                child: AutoSizeInterText(
+                                  text:
+                                      'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fw: FontWeight.normal,
+                                  fontFamily: "Poppinslight",
+                                  maxLines: 5,
+                                ),
+                              ),
+                              const Gap(50),
+                              SizedBox(
+                                child: TextButton(
+                                  onPressed: () async {
+                                    const url = 'https://pamilya.com.ph';
+                                    if (await canLaunch(url)) {
+                                      await launch(url);
+                                    } else {
+                                      throw 'Could not launch $url';
+                                    }
+                                  },
+                                  style: TextButton.styleFrom(
+                                    backgroundColor: const Color(
+                                        0xFF404FA1), // Set background color to #404FA1
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 8),
+                                  ),
+                                  child: const Text(
+                                    'Shop Now',
+                                    style: TextStyle(
+                                      color: Colors
+                                          .white, // Set text color for visibility
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
+                ],
+              ),
+          // SizedBox(
+          //   height: 600,
+          //   child: Stack(
+          //     children: [
+          //       SizedBox(
+          //         width: size.width,
+          //         height: 800,
+          //         child: Stack(
+          //           children: imgList.asMap().entries.map((entry) {
+          //             int index = entry.key;
+          //             String imgPath = entry.value;
+          //             return AnimatedOpacity(
+          //               opacity: hoverIndex == index ? 1.0 : 0.0,
+          //               duration: const Duration(seconds: 1),
+          //               curve: Curves.easeInOut,
+          //               child: Image.asset(
+          //                 imgPath,
+          //                 fit: BoxFit.cover,
+          //                 width: double.infinity,
+          //                 height: double.infinity,
+          //               ),
+          //             );
+          //           }).toList(),
+          //         ),
+          //       ),
+          //       Positioned.fill(
+          //         child: Container(
+          //           alignment: Alignment.topCenter, // Keep this as is
+          //           // ignore: deprecated_member_use
+
+          //           child: Padding(
+          //             padding: const EdgeInsets.only(
+          //                 left: 20), // Adjust the left padding as needed
+          //             child: SizedBox(
+          //               child: Column(
+          //                 mainAxisAlignment: MainAxisAlignment
+          //                     .center, // Center the text vertically
+          //                 crossAxisAlignment: CrossAxisAlignment.start,
+          //                 children: [
+          //                   const SizedBox(
+          //                     child: AutoSizeInterText(
+          //                       text:
+          //                           'Discover Local Treasures, Delivered to Your Doorstep.',
+          //                       fontSize: 50,
+          //                       color: Colors
+          //                           .white, // Changed to white for visibility
+          //                       fw: FontWeight.bold,
+          //                       fontFamily: "Poppinsbold",
+          //                       maxLines: 2,
+          //                     ),
+          //                   ),
+
+          //                   const SizedBox(
+          //                       height: 50), // Add space between the texts
+          //                   const SizedBox(
+          //                     child: AutoSizeInterText(
+          //                       text:
+          //                           'Shop from a curated collection of locally-made products that celebrate Filipino craftsmanship. Support local businesses while enjoying unique finds, all in one place!',
+          //                       fontSize: 18,
+          //                       color: Colors.white,
+          //                       fw: FontWeight.normal,
+          //                       fontFamily: "Poppinslight",
+          //                       maxLines: 5,
+          //                     ),
+          //                   ),
+          //                   const Gap(50),
+          //                   SizedBox(
+          //                     child: TextButton(
+          //                       onPressed: () async {
+          //                         const url = 'https://pamilya.com.ph';
+          //                         // ignore: deprecated_member_use
+          //                         if (await canLaunch(url)) {
+          //                           // ignore: deprecated_member_use
+          //                           await launch(url);
+          //                         } else {
+          //                           throw 'Could not launch $url';
+          //                         }
+          //                       },
+          //                       style: TextButton.styleFrom(
+          //                         backgroundColor: const Color(
+          //                             0xFF404FA1), // Set background color to #404FA1
+          //                         padding: const EdgeInsets.symmetric(
+          //                             horizontal: 16, vertical: 8),
+          //                       ),
+          //                       child: const Text(
+          //                         'Shop Now',
+          //                         style: TextStyle(
+          //                           color: Colors
+          //                               .white, // Set text color for visibility
+          //                           fontSize: 16,
+          //                         ),
+          //                       ),
+          //                     ),
+          //                   ),
+          //                 ],
+          //               ),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const Gap(100),
           Column(
             children: [

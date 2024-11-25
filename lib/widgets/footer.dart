@@ -257,7 +257,7 @@ class _TabletView extends State<TabletView> {
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       color: const Color.fromARGB(255, 231, 231, 231),
       width: size.width,
       child: Padding(
@@ -321,7 +321,6 @@ class _TabletView extends State<TabletView> {
                 ],
               ),
             ),
-            const SizedBox(width: 500),
             const SizedBox(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
